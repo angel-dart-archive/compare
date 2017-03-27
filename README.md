@@ -39,9 +39,12 @@ and I will update this project accordingly.
 * Authentication
 * Client Integration
 * Code Sharing (between client and server)
+* Controllers
 * Database Integration
+* Dependency Injection
 * Development Experience
 * Documentation
+* Error Handling
 * Extensibility
 * Learning Curve
 * Maintenance*
@@ -55,3 +58,7 @@ and I will update this project accordingly.
 
 *TODO**: `Maintenance` should be about who updates each library, and how actively
 each library is maintained.
+
+# Work In Progress
+This repository is very much still a work in progress, and will undergo very heavy editing to
+assure that all information presented is accurate.
