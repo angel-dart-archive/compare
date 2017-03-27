@@ -5,8 +5,8 @@
 [Angel](https://github.com/angel-dart/angel/wiki) is objectively better
 than all of the other existing Dart server-side frameworks.**
 
-Yes, this is controversial. Yes, this is largely self-aggrandizing. I am well
-aware that a project like this will turn the framework space from friendly
+Yes, this is controversial. Yes, this is largely self-aggrandizing. And yes, I
+am well aware that publishing may turn the framework space from friendly
 acknowledgement into full-on competition. However, it is 100% necessary, both to
 ensure that Angel draws in users, and to also introduce developers to server-side
 Dart by providing them the best option for their purposes.
@@ -46,7 +46,7 @@ and I will update this project accordingly.
 * Learning Curve
 * Maintenance*
 * Performance
-* Routing
+* [Routing](routing/README.md)
 * Scalability
 * Security
 * Serialization
