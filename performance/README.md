@@ -15,7 +15,7 @@ the standard deviation will remain relatively unchanged.
 
 | Server              | Min. Conns./sec. | Max. Conns./sec. | Average Conns./sec.
 | ---                 | ---              | ---              | ---
-| Angel               | 5808.59          | 7085.14          | 6600.2333
+| Angel               | 5808.59          | 7085.14          | 6600.23
 | Angel (multiserver) | 0                | 0                | 0
 | Aqueduct            | 0                | 0                | 0
 | ExpressJS           | 9004.47          | 11257.02         | 10491.69
