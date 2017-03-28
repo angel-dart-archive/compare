@@ -22,6 +22,8 @@ applications built entirely with Dart. Angel wants to change that - forever.'
 # Compared Frameworks
 * [Angel](https://github.com/angel-dart/angel/wiki)
 * [Aqueduct](https://github.com/stablekernel/aqueduct)
+
+*Coming soon:*
 * [Jaguar](https://github.com/Jaguar-dart/jaguar)
 * [Redstone](https://github.com/redstone-dart/redstone)
 * [shelf](https://github.com/dart-lang/shelf)*
