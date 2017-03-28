@@ -17,7 +17,7 @@ Angel is a project I started over a year ago to bring a solid foundation
 on which Dart applications could be built, end-to-end. At the time I entered
 the Dart world, and to this very day, I have never seen another framework
 which provides a complete development environment for modern, *full-stack*
-applications built entirely with Dart. Angel wants to change that - forever.'
+applications built entirely with Dart. Angel wants to change that - forever.
 
 # Compared Frameworks
 * [Angel](https://github.com/angel-dart/angel/wiki)
