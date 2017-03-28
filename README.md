@@ -1,8 +1,8 @@
 # compare
 [![The Angel Framework](https://angel-dart.github.io/images/logo.png)](https://github.com/angel-dart/angel/wiki)
 
-**The purpose of this repository is to prove that
-[Angel](https://github.com/angel-dart/angel/wiki) is objectively better
+The purpose of this repository is to prove that
+**[Angel](https://github.com/angel-dart/angel/wiki) is objectively better
 than all of the other existing Dart server-side frameworks.**
 
 Yes, this is controversial. Yes, this is largely self-aggrandizing. And yes, I
