@@ -18,11 +18,17 @@ the standard deviation will remain relatively unchanged.
 | Angel               | 5808.59          | 7085.14          | 6600.23
 | Angel (multiserver) | 0                | 0                | 0
 | Aqueduct            | 0                | 0                | 0
+| `dart:io`           | 11501.56         | 19196.21         | 13938.24
 | ExpressJS           | 9004.47          | 11257.02         | 10491.69
 
-Compared to Node.js, the DartVM is definitely lacking as an HTTP server.
-Where Dart does have the advantage is that it presents a lot less latency on responses.
-For what it's worth, though, Angel put up a good fight.
+**Winner**: *`dart:io`*
+
+Compared to raw `dart:io` and Node.js, Angel is definitely lacking in terms of
+performance.
+
+A lot of tuning will be necessary to improve server performance. Dart is capable
+of serving applications of scale slightly larger than Express, so Angel should strive to
+be as well.
 
 I'll try to do some peeking into Node's `http` library, as well as Express itself,
 so as to boost Angel's numbers up. The goal for now is at least 8000 connections
@@ -78,6 +84,17 @@ Requests/sec:   6069.98
 Transfer/sec:      1.09MB
 ```
 
+*`dart:io`*
+```
+  25 threads and 100 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    12.93ms   21.20ms 248.78ms   87.84%
+    Req/Sec   727.35    541.68     7.84k    86.16%
+  1082355 requests in 1.00m, 179.61MB read
+Requests/sec:  18009.30
+Transfer/sec:      2.99MB
+```
+
 *ExpressJS*:
 ```
 Running 1m test @ http://localhost:3000
@@ -107,6 +124,19 @@ Running 1m test @ http://localhost:3000
   Socket errors: connect 0, read 193, write 1, timeout 0
 Requests/sec:   5808.59
 Transfer/sec:      1.05MB
+```
+
+*`dart:io`*:
+```
+Running 1m test @ http://localhost:3000
+  25 threads and 200 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    38.27ms   80.62ms   1.73s    92.19%
+    Req/Sec   469.27    339.75    12.45k    82.26%
+  691289 requests in 1.00m, 114.71MB read
+  Socket errors: connect 0, read 95, write 0, timeout 0
+Requests/sec:  11501.56
+Transfer/sec:      1.91MB
 ```
 
 *ExpressJS*:
@@ -141,6 +171,19 @@ Requests/sec:   6951.12
 Transfer/sec:      1.25MB
 ```
 
+*`dart:io`*
+```
+Running 1m test @ http://localhost:3000
+  25 threads and 500 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    29.05ms   74.15ms   1.74s    94.57%
+    Req/Sec     0.90k   779.85    11.38k    85.71%
+  734960 requests in 1.00m, 121.96MB read
+  Socket errors: connect 274, read 44, write 10, timeout 0
+Requests/sec:  12228.17
+Transfer/sec:      2.03MB
+```
+
 *ExpressJS*:
 ```
 Running 1m test @ http://localhost:3000
@@ -168,6 +211,19 @@ Running 1m test @ http://localhost:3000
   Socket errors: connect 774, read 191, write 3, timeout 0
 Requests/sec:   6972.22
 Transfer/sec:      1.26MB
+```
+
+*`dart:io`*:
+```
+Running 1m test @ http://localhost:3000
+  25 threads and 1000 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    22.25ms   57.86ms   1.61s    94.88%
+    Req/Sec     1.15k     1.22k   15.68k    85.20%
+  727176 requests in 1.00m, 120.67MB read
+  Socket errors: connect 774, read 39, write 1, timeout 0
+Requests/sec:  12100.28
+Transfer/sec:      2.01MB
 ```
 
 *ExpressJS*:
@@ -202,6 +258,19 @@ Requests/sec:   7085.14
 Transfer/sec:      1.28MB
 ```
 
+*`dart:io`*:
+```
+Running 1m test @ http://localhost:3000
+  25 threads and 2500 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    18.30ms   32.23ms 887.77ms   95.06%
+    Req/Sec   512.17    553.94     6.97k    89.32%
+  748616 requests in 1.00m, 124.22MB read
+  Socket errors: connect 2274, read 41, write 0, timeout 0
+Requests/sec:  12458.17
+Transfer/sec:      2.07MB
+```
+
 *ExpressJS*:
 ```
 Running 1m test @ http://localhost:3000
@@ -234,6 +303,19 @@ Requests/sec:   6714.35
 Transfer/sec:      1.21MB
 ```
 
+*`dart:io`*:
+```
+Running 1m test @ http://localhost:3000
+  25 threads and 5000 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    18.53ms   33.84ms 776.03ms   95.17%
+    Req/Sec   497.85    780.56     8.79k    93.76%
+  725709 requests in 1.00m, 120.42MB read
+  Socket errors: connect 4774, read 42, write 1, timeout 0
+Requests/sec:  12073.98
+Transfer/sec:      2.00MB
+```
+
 *ExpressJS*:
 ```
 Running 1m test @ http://localhost:3000
@@ -253,7 +335,19 @@ Transfer/sec:      4.03MB
 wrk -c 10000 -t 25 -d 60 http://localhost:3000
 ```
 
-*All*:
+*dart:io*:
+```
+Running 1m test @ http://localhost:3000
+  25 threads and 10000 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    11.35ms   16.72ms 254.17ms   92.83%
+    Req/Sec   797.17      1.25k   13.48k    87.25%
+  1153670 requests in 1.00m, 191.44MB read
+  Socket errors: connect 9774, read 0, write 0, timeout 0
+Requests/sec:  19196.21
+Transfer/sec:      3.19MB
+```
+
 ```
 unable to create thread 6: Too many open files
 ```
