@@ -50,7 +50,7 @@ and I will update this project accordingly.
 * Extensibility
 * Learning Curve
 * Maintenance*
-* Performance
+* [Performance](performance/README.md)
 * [Routing](routing/README.md)
 * Scalability
 * Security
