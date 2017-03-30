@@ -7,24 +7,24 @@ It is expected that the server sends a `Content-Type: application/json` header a
 
 # Results
 Average latency as server load (active connections) increases:
-| Server               | 100    | 200    | 500    | 1k     | 2.5k   | 5k     | 10k    | Average Latency (ms)
-| ---                  | ---    | ---    | ---    | ---    | ---    | ---    | ---    | ---
-| Angel                | 62.81  | 38.01  | 33.15  | 32.94  | 31.92  | 33.60  |        | 38.74
-| Angel (multiserver)  |        |        |        |        |        |        |        |
-| Aqueduct             |        |        |        |        |        |        |        |
-| `shelf`              |        |        |        |        |        |        |        |
-| `dart:io`            | 12.93  | 38.27  | 29.05  | 22.25  | 18.30  | 18.53  | 11.35  | 21.53
-| ExpressJS            | 159.12 | 157.17 | 95.84  | 61.48  | 23.78  | 20.21  |        | 86.27
+| Server               | 100    | 200    | 500    | 1k     | 2.5k   | 5k     | 10k    | Average Latency (ms) |
+| -------------------- | ------ | ------ | ------ | ------ | ------ | ------ | ------ | -------------------- |
+| Angel                | 62.81  | 38.01  | 33.15  | 32.94  | 31.92  | 33.60  |        | 38.74                |
+| Angel (multiserver)  |        |        |        |        |        |        |        |                      |
+| Aqueduct             |        |        |        |        |        |        |        |                      |
+| `shelf`              |        |        |        |        |        |        |        |                      |
+| `dart:io`            | 12.93  | 38.27  | 29.05  | 22.25  | 18.30  | 18.53  | 11.35  | 21.53                |
+| ExpressJS            | 159.12 | 157.17 | 95.84  | 61.48  | 23.78  | 20.21  |        | 86.27                |
 
 Connections per second:
-| Server              | Min. Conns./sec. | Max. Conns./sec. | Average Conns./sec.
-| ---                 | ---              | ---              | ---
-| Angel               | 5808.59          | 7085.14          | 6600.23
-| Angel (multiserver) | 0                | 0                | 0
-| Aqueduct            | 0                | 0                | 0
-| `shelf`             | 0                | 0                | 0
-| `dart:io`           | 11501.56         | 19196.21         | 13938.24
-| ExpressJS           | 9004.47          | 11257.02         | 10491.69
+| Server              | Min. Conns./sec. | Max. Conns./sec. | Average Conns./sec. |
+| ------------------- | ---------------- | ---------------- | ------------------- |
+| Angel               | 5808.59          | 7085.14          | 6600.23             |
+| Angel (multiserver) | 0                | 0                | 0                   |
+| Aqueduct            | 0                | 0                | 0                   |
+| `shelf`             | 0                | 0                | 0                   |
+| `dart:io`           | 11501.56         | 19196.21         | 13938.24            |
+| ExpressJS           | 9004.47          | 11257.02         | 10491.69            |
 
 ## Data
 
