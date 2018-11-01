@@ -1,3 +1,0 @@
-name: routing_angel
-dependencies:
-  angel_common: ^1.0.0-beta
